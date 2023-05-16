@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>구구단</title>
+  <style>
+    #output {
+      font-size: 16px;
+      font-family: 'Arial', sans-serif;
+      margin: 20px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <div id="output"></div>
+  <script>
+    let output = document.getElementById("output");
+    let i = 2;
+    let j = 1;
+
+    let intervalID = setInterval(function() {
+      let table = "<table>";
+      let title = i + "단";
+
+      table += "<tr><th colspan='2'>" + title + "</th></tr>";
+
+      for (j = 1; j <= 9; j++) {
+        table += "<tr>";
+        table += "<td>" + i + " x " + j + "</td>";
+        table += "<td>" + (i * j) + "</td>";
+        table += "</tr>";
+      }
+
+      table += "</table>";
+
+      output.insertAdjacentHTML("beforeend", table);
+
+      if (i === 9) {
+        clearInterval(intervalID);
+      }
+
+      output.scrollTop = output.scrollHeight;
+
+      window.scroll(0, document.body.scrollHeight);
+      
+      i++;
+    }, 1000);
+  </script>
+</body>
+</html>

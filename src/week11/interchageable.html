@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>상품 교환 가능 여부 확인</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+      }
+      h1 {
+        margin-bottom: 20px;
+      }
+      form {
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input[type="date"] {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+      }
+      input[type="button"] {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        background-color: #f5f5f5;
+        color: #333;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      p {
+        margin-top: 0;
+      }
+      .result-message {
+        padding: 20px;
+        border-radius: 5px;
+        background-color: #f5f5f5;
+        color: #333;
+        font-size: 16px;
+      }
+      .result-message.success {
+        border-color: green;
+        background-color: #f0fff0;
+        color: green;
+      }
+      .result-message.error {
+        border-color: red;
+        background-color: #fff0f0;
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>상품 교환 가능 여부 확인</h1>
+    </div>
+    <p>구매한지 30일이 지난 상품에 대해서는 교환이 불가능합니다.</p>
+    <form>
+      <label for="purchase_date">상품 구매일:</label>
+      <input type="date" id="purchase_date" name="purchase_date">
+      <br>
+      <input type="button" value="확인" onclick="checkExchangeEligibility()">
+    </form>
+    <div id="exchange_result"></div>
+    
+    <script>
+      function checkExchangeEligibility() {
+        const purchaseDate = new Date(document.getElementById('purchase_date').value);
+        const today = new Date();
+        const timeDiff = today.getTime() - purchaseDate.getTime();
+        const daysDiff = Math.floor(timeDiff / (1000 * 3600 * 24)); // 날짜 차이 계산
+        const resultEl = document.getElementById('exchange_result');
+        const exchangePeriod = 30;
+        if (purchaseDate > today) {
+          setResultMessage(resultEl, '미래 날짜는 선택할 수 없습니다.', 'error');
+        } else if (daysDiff < exchangePeriod) {
+          const daysLeft = exchangePeriod - daysDiff;
+          const message = `${daysDiff}일 전에 구매하였습니다. ${exchangePeriod}일이 경과하지 않았으므로 교환 가능합니다. ${daysLeft}일이 남았습니다.`;
+          setResultMessage(resultEl, message, 'success');
+        } else {
+          const message = `${daysDiff}일 전에 구매하였습니다. ${exchangePeriod}일이 경과하였으므로 교환이 불가능합니다.`
+          setResultMessage(resultEl, message, 'error');
+    }
+  }
+  
+  function setResultMessage(resultEl, message, type) {
+    resultEl.innerHTML = `
+      <div class="result-message ${type}">
+        ${message}
+      </div>
+    `;
+  }
+</script>

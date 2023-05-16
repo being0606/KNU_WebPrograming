@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>설문조사</title>
+
+    <style>
+        html, body { margin: 0; padding: 0; height: 100%; }
+        header {
+            width: 100%; height: 10%; 
+            background: #BFCCB5;
+        }
+        
+        body{
+            background: white; 
+        }
+        
+        section{
+            width: 100%; 
+            height: 72%; 
+            float: left; 
+            background: #B7B7B7; 
+            /* 패딩하기 */
+            padding: 20px;
+            
+        }
+
+        footer{height: 40%; background: #EDC6B1; clear: both;}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h2 style="text-align: center;">설문지 </h2>
+        <p>설문지입니다.</p>
+    </header>
+    
+    <section>
+        학년
+        <input type="radio" name="gen" value="male" id = 'gen_1'><label for="gen_1">1학년</label>
+        <input type="radio" name="gen" value="female" id = 'gen_2'><label for="gen_2">2학년</label>
+        <input type="radio" name="gen" value="undecided" id = 'gen_3'><label for="gen_3">3학년</label>
+        <input type="radio" name="gen" value="undecided" id = 'gen_4'><label for="gen_4">4학년</label>
+        <br><br>
+
+        성별
+        <input type="radio" name="gender" value="male" id = 'gender_1'><label for="gender_1">남</label>
+        <input type="radio" name="gender" value="female" id = 'gender_2'><label for="gender_2">여</label>
+        <br><br>
+
+        생년월일 <input type="date"> <br><br>
+
+        <form>
+          <label for="coffee">좋아하는 커피:</label>
+          <select id="coffee" name="coffee">
+            <option value="americano">Americano</option>
+            <option value="latte">Latte</option>
+            <option value="cappuccino">Cappuccino</option>
+          </select><br><br><br>
+        </form>
+
+        남기고 싶은 말<textarea row="300"></textarea>
+        <input type="submit" value="완료">
+    </section>
+
+    <form action="login.php">
+        <footer>
+            <br>
+            Copyright 2023 4 13 by 임현진
+    </footer>
+
+</body>
+</html>

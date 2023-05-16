@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+
+    <script>
+        function getSome() {
+            let a = parseInt(document.getElementById("x").value);
+            let b = parseInt(document.getElementById("y").value);
+            let sum = a + b;
+
+            document.getElementById("sum").value = sum;
+        }
+    </script>
+</head>
+<body>
+    <form name="calc" method="post">
+        첫 번째 정수 : <input id="x" type="number"><br>
+        두 번째 정수 : <input id="y" type="number"><br>
+        합계 : <input id="sum" type="number" readonly><br>
+    </form>
+    <form>
+        <button type="button" onclick="getSome()">계산</button>
+    </form>
+</body>
+</html>

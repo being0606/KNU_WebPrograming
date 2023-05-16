@@ -1,0 +1,49 @@
+p.title
+{
+    color:black;
+    font-size : 3.0rem;
+    text-align: center;
+    text-shadow: 5px 5px 5px green;
+    font-family: 굴림;
+}
+
+h1.subtitle
+{
+    color:black;
+    font-size : 1.0rem;
+    text-shadow: 2px 2px 2px red;
+}
+
+li{
+    background-color: #cce5ff;
+    color: darkblue;
+}
+
+body
+{
+    color:blue;
+    font-family: MD개성체;
+    font-size: 1.2em;
+    background-color:bisque;
+}
+
+
+
+h1.subtitle.ul.li
+{
+    color:black;
+    background-color: #cce5ff;
+    font-size : 1.0rem;
+    text-shadow: 2px 2px 2px #FF0000;
+}
+
+h1.ul
+{
+    font-size : 1.0rem;
+    text-shadow: 2px 2px 2px #cce5ff;
+}
+
+p.essay
+{
+    text-align: justify;
+}

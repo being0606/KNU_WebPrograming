@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>3, 6, 9 게임</title>
+  <style>
+    #output {
+      height: 300px;
+      overflow: scroll;
+    }
+  </style>
+</head>
+<body>
+  <h1>3, 6, 9 게임</h1>
+  <button onclick="startGame()">게임 시작</button>
+  <p id="output"></p>
+
+  <script>
+    function startGame() {
+      var output = document.getElementById("output");
+      output.innerHTML = "";  // 이전 결과 삭제
+      var i = 1;
+      var intervalId = setInterval(function() {
+        var count = count369s(i);
+        if (count > 0) {  // 3, 6, 9가 포함된 경우
+          output.innerHTML += "짝".repeat(count) + "<br>";
+        } else {  // 그렇지 않으면 숫자 출력
+          output.innerHTML += i + "<br>";
+        }
+        i++;
+        if (i > 1500) {  // 1500까지 출력하면 종료
+          clearInterval(intervalId);
+        }
+        output.scrollTop = output.scrollHeight;  // 스크롤을 자동으로 내림
+      }, 500);
+    }
+
+    function count369s(n) {
+      var count = 0;
+      while (n > 0) {
+        var digit = n % 10;
+        if (digit === 3 || digit === 6 || digit === 9) {
+          count++;
+        }
+        n = Math.floor(n / 10);
+      }
+      return count;
+    }
+  </script>
+</body>
+</html>

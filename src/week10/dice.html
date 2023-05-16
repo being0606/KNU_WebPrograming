@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>주사위 게임</title>
+</head>
+<body>
+    <h1>주사위 게임</h1>
+    <button onclick="playDiceGame()">직접 입력하기</button>
+    <button onclick="rollDice()">막 굴리기</button>
+    <p id="result"></p>
+
+    <script>
+        var userNumber = null;
+        var computerNumber = null;
+
+        function playDiceGame() {
+            var inputNumber = prompt("숫자를 입력하세요 (1~6):");
+            if (inputNumber === null || inputNumber === "") {  // 입력이 취소되었거나 빈 문자열인 경우
+                return;
+            }
+            userNumber = parseInt(inputNumber);
+            if (isNaN(userNumber) || userNumber < 1 || userNumber > 6) {  // 입력된 값이 숫자가 아니거나 범위를 벗어난 경우
+                alert("1~6 사이의 숫자를 입력하세요.");
+                userNumber = null;
+                return;
+            }
+            var result = document.getElementById("result");
+            computerNumber = Math.floor(Math.random() * 6) + 1;
+            result.innerHTML = "당신이 선택한 숫자는 " + userNumber + "이고, 컴퓨터가 선택한 숫자는 " + computerNumber + "입니다.";
+            showResult();
+        }
+
+        function rollDice() {
+            userNumber = Math.floor(Math.random() * 6) + 1;
+            computerNumber = Math.floor(Math.random() * 6) + 1;
+            var result = document.getElementById("result");
+            result.innerHTML = "당신이 선택한 숫자는 " + userNumber + "이고, 컴퓨터가 선택한 숫자는 " + computerNumber + "입니다.";
+            showResult();
+        }
+
+        function showResult() {
+            var result = document.getElementById("result");
+            if (userNumber === computerNumber) {
+                result.innerHTML += " 비겼습니다.";
+            } else if (userNumber > computerNumber) {
+                result.innerHTML += " 이겼습니다!";
+            } else {
+                result.innerHTML += " 졌습니다...";
+            }
+        }
+    </script>
+</body>
+</html>

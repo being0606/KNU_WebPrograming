@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body
+        {
+            width: 20%;
+            margin: 2rem auto;
+            float: left;
+        }
+        .main
+        {
+            width: 60%;
+            float: left;
+            background-color: purple;
+        }
+        .left
+        {
+            width: 20%;
+            float: left;
+            background-color: greenyellow;
+        }
+        .right
+        {
+            width: 20%;
+            float: left;
+            background-color: yellow;
+        }
+        @media screen and (max-width : 786px){
+            .left,
+            .right,
+            .main
+            {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="left">왼쪽</div>
+    <div class="main">메인</div>
+    <div class="right">오른쪽</div>
+
+    
+</body>
+</html>

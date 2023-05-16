@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>구구단</title>
+  <style>
+    #output {
+      font-size: 16px;
+      font-family: 'Arial', sans-serif;
+      margin: 20px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <div id="output"></div>
+  <script>
+    let output = document.getElementById("output");
+    let i = 2;
+    let j = 1;
+
+    while (i <= 9) {
+      let table = "<table>";
+      let title = i + "단";
+
+      table += "<tr><th colspan='2'>" + title + "</th></tr>";
+
+      j = 1;
+      while (j <= 9) {
+        table += "<tr>";
+        table += "<td>" + i + " x " + j + "</td>";
+        table += "<td>" + (i * j) + "</td>";
+        table += "</tr>";
+
+        j++;
+      }
+
+      table += "</table>";
+
+      output.insertAdjacentHTML("beforeend", table);
+
+      i++;
+
+      window.scroll(0, document.body.scrollHeight);
+    }
+  </script>
+</body>
+</html>

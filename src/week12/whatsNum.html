@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>숫자 맞추기 게임</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      h1 {
+        margin-top: 50px;
+      }
+      #game-board {
+        margin-top: 50px;
+        display: inline-block;
+        border: 2px solid black;
+        border-radius: 10px;
+        padding: 20px;
+        width: 70%;
+        height: 50%;
+
+      }
+      label {
+        display: block;
+        margin-top: 10px;
+      }
+      input[type=number] {
+        width: 80px;
+      }
+      #submit {
+        margin-top: 10px;
+      }
+      #message {
+        margin-top: 20px;
+      }
+      #count {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>1부터 100 사이의 숫자를 맞춰보세요!</h1>
+    <div id="game-board">
+      <div>
+        <label for="guess">추측한 숫자:</label>
+        <input type="number" id="guess" name="guess">
+      </div>
+      <div>
+        <button id="submit">제출</button>
+      </div>
+      <div id="message"></div>
+      <div id="count">제출 횟수: 0</div>
+    </div>
+    <script>
+      // 1부터 100 사이의 난수 생성
+      const numberToGuess = Math.floor(Math.random() * 100) + 1;
+
+      // 사용자가 제출한 횟수
+      let guessCount = 0;
+
+      // 사용자의 추측을 검사하고 게임 상황을 업데이트하는 함수
+      function checkGuess() {
+        // 사용자가 입력한 숫자 가져오기
+        const guess = Number(document.getElementById("guess").value);
+        // 메시지 표시할 div 요소 가져오기
+        const message = document.getElementById("message");
+        // 제출 횟수 표시할 div 요소 가져오기
+        const count = document.getElementById("count");
+
+        // 사용자의 추측이 올바른지 확인
+        if (guess === numberToGuess) {
+            // 올바른 경우 메시지와 제출 횟수 표시
+            message.textContent = `축하합니다! ${guessCount+1}번째로 숫자를 맞추셨습니다!`;
+            count.textContent = `제출 횟수: ${guessCount+1}`;
+            // 제출 버튼의 이벤트 리스너 제거
+            document.getElementById("submit").removeEventListener("click", checkGuess);
+        } else if (guess < numberToGuess) {
+            // 사용자의 추측이 작은 경우 메시지 업데이트
+            message.textContent = "너무 작습니다. 다시 시도해보세요.";
+        } else {
+            // 사용자의 추측이 큰 경우 메시지 업데이트
+            message.textContent = "너무 큽니다. 다시 시도해보세요.";
+        }
+        // 제출 횟수 증가
+        guessCount++;
+        // 제출 횟수 표시 업데이트
+        document.getElementById("count").textContent = `제출 횟수: ${guessCount}`;
+        }
+
+    // 제출 버튼 클릭 시 checkGuess 함수 호출
+    document.getElementById("submit").addEventListener("click", checkGuess);
+    </script>
+  </body>
+</html>

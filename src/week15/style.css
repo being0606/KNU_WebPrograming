@@ -1,0 +1,49 @@
+.container
+{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+    'header header header'
+    'Menu main Sidebar'
+    'Menu footer footer'
+    
+    ;
+}
+
+
+/* header */
+.item1
+{
+    grid-area: header;
+    background-color: rgb(67, 200, 37);
+}
+
+/* Menu */
+.item2
+{
+    grid-area: Menu;
+    background-color: rgb(209, 209, 79);
+}
+
+/* main */
+.item3
+{
+    grid-area: main;
+    background-color: rgb(69, 32, 142);
+}
+
+/* Sidebar */
+.item4
+{
+    grid-area: Sidebar;
+    background-color: rgb(35, 158, 82);
+}
+
+/* footer */
+.item5
+{
+    grid-area: footer;
+    background-color: rgb(198, 160, 36);
+}
+

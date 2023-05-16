@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Design</title>
+    <style>
+      @media screen and (max-width: 2000px) {
+        #page {
+          padding: 5px;
+          margin: 20px auto;
+          width: 94%;
+        }
+        #main {
+          width: 65%;
+          float: left;
+        }
+        #sidebar {
+          width: 30%;
+          float: right;
+        }
+        #footer {
+          clear: both;
+        }
+      }
+
+      @media screen and (max-width: 500px) {
+        #header {
+          padding: 5px;
+          margin: 20px auto;
+        }
+        #main {
+          width: 100%;
+        }
+        #sidebar {
+          width: 100%;
+        }
+      }
+
+      #header,
+      #main,
+      #sidebar,
+      #footer {
+        border: solid 1px red;
+      }
+
+      #header {
+        background-color: yellow;
+      }
+
+      #sidebar {
+        background-color: aliceblue;
+      }
+
+      #main {
+        background-color: aqua;
+      }
+
+      #footer {
+        background-color: coral;
+      }
+
+      #page {
+        max-width: 2000px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="page">
+      <div id="header">
+        <h2>Header</h2>
+      </div>
+      <div id="main">
+        <h2>Main</h2>
+        <img src="/Users/being/dev_be_ing/html+css+js/week13/cat.jpeg" alt="My Image" width=100%>
+      </div>
+      <div id="sidebar">
+        <h2>Sidebar</h2>
+        <ul>
+          <li>Fluid Grids</li>
+          <li>Media Queries</li>
+        </ul>
+      </div>
+      <div id="footer">
+        <h2>Footer</h2>
+      </div>
+    </div>
+  </body>
+</html>

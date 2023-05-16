@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    #header {
+      height: 100px;
+      background-color: gray;
+    }
+    #main {
+      width: 65%;
+      float: left;
+    }
+    #sliderbar {
+      width: 30%;
+      float: right;
+    }
+    #footer {
+      clear: both;
+    }
+
+    /* 데스크톱용 스타일 */
+    @media screen and (min-width: 1201px) {
+      .container {
+        max-width: 1200px;
+      }
+    }
+
+    /* 태블릿용 스타일 */
+    @media screen and (min-width: 768px) and (max-width: 1200px) {
+      .container {
+        width: 95%;
+      }
+      #main {
+        width: 100%;
+      }
+      #sliderbar {
+        width: 100%;
+      }
+    }
+
+    /* 모바일용 스타일 */
+    @media screen and (max-width: 767px) {
+      .container {
+        width: 95%;
+      }
+      #main {
+        width: 100%;
+        float: none;
+      }
+      #sliderbar {
+        width: 100%;
+        float: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="header">header</div>
+    <div id="main"></div>
+    </div>   
+    <div id="sliderbar">sliderbar</div>
+    <div id="footer">footer</div>
+  </div>
+</body>
+</html>

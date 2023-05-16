@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>구구단 퀴즈</title>
+	<style>
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 50px;
+		}
+		input[type=text] {
+			padding: 10px;
+			font-size: 16px;
+			margin-top: 20px;
+		}
+		button {
+			padding: 10px 20px;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			margin-top: 20px;
+			cursor: pointer;
+			font-size: 16px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>구구단 퀴즈</h1>
+		<p id="question"></p>
+		<input type="text" id="answer" placeholder="답을 입력하세요">
+		<button onclick=checkAnswer()>제출</button>
+	</div>
+
+	<script>
+		function generateQuestion() {
+			let num1 = Math.floor(Math.random() * 9) + 1;
+			let num2 = Math.floor(Math.random() * 9) + 1;
+			let question = `${num1} x ${num2} = ?`;
+			let answer = num1 * num2;
+			return { question, answer };
+		}
+
+		function checkAnswer() {
+			let userAnswer = document.getElementById("answer").value;
+			let question = document.getElementById("question").textContent;
+			let correctAnswer = eval(question.replace("?", userAnswer));
+			if (userAnswer == correctAnswer) {
+				alert("정답입니다!");
+			} else {
+				alert("틀렸습니다.");
+			}
+			document.getElementById("answer").value = "";
+			showQuestion();
+		}
+
+		function showQuestion() {
+			let { question, answer } = generateQuestion();
+			document.getElementById("question").textContent = question;
+		}
+
+		showQuestion();
+	</script>
+</body>
+</html>

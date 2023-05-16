@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>사용자 이름 출력</title>
+</head>
+<body>
+  <h1>사용자 이름 출력</h1>
+  <button onclick="showName()" id="nameButton">이름 입력하기</button>
+  <p id="output"></p>
+
+  <script>
+    function showName() {
+      var name = prompt("이름을 입력하세요.");
+      var output = document.getElementById("output");
+      output.innerHTML = "안녕하세요, " + name + "님!";
+    }
+
+    var nameButton = document.getElementById("nameButton");
+    nameButton.innerHTML = "이름 입력하기";  // 버튼의 텍스트 설정
+  </script>
+</body>
+</html>

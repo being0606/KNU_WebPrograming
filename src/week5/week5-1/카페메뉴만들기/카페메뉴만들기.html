@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p140_상속</title>
+
+
+    <style>
+        body h1>strong
+        {
+            color:red
+        }
+        #parent em
+        {
+            color : rgb(220, 220, 110)
+        }
+        a:hover
+        {
+            color:yellow
+        }
+        a:visited
+        {
+            color:gray
+        }
+        a::before
+        {
+            content: "검색할사람";
+        }
+
+    </style>
+</head>
+<body>
+    <h1> 아래의 <strong>메뉴판</strong> 을 보고 메뉴를 골라주세요.</h1>
+    <h2 id = "parent">
+        차가운 메뉴 <em> 아이스크림 </em> 입니다.
+    </h2>
+    <h2>
+        그 내용은 <em>조상 자식</em> 선택자입니다.
+    </h2>
+    <a href="http://www.naver.com">네이버</a>
+</body>
+</html>

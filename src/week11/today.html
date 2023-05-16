@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>날짜와 시간 출력하기</title>
+</head>
+<body>
+	<h1>현재 날짜와 시간</h1>
+	<p id="date"></p>
+	<script>
+		function updateDateTime() {
+			var date = new Date();
+			var elements = ["년", "월", "일", "시", "분", "초"];
+			var values = [date.getFullYear(), date.getMonth()+1, date.getDate(), date.getHours(), date.getMinutes(), date.getSeconds()];
+			var dateString = "";
+			for (var i = 0; i < elements.length; i++) {
+				dateString += values[i] + elements[i] + " ";
+			}
+			document.getElementById("date").innerHTML = dateString;
+		}
+		
+		updateDateTime();
+		setInterval(updateDateTime, 1000);
+	</script>
+</body>
+</html>
+ㄴ

@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Design(반응형웹)</title>
+    <style>
+      @media screen and (max-width: 2000px) {
+            #page {
+                padding: 5px;
+                margin: 20px auto;
+                width: 94%;
+            }
+            #main {
+                width: 65%;
+                float: left;
+            }
+            #sidebar {
+                width: 30%;
+                float: right;
+                height: 100%;
+            }
+            #footer {
+                clear: both;
+            }
+        }
+        @media screen and (max-width: 500px) {
+            #header {
+                padding: 5px;
+                margin: 20px auto;
+            }
+            #main {
+                width: 100%;
+            }
+            #sidebar {
+                width: 100%;
+                height: auto;
+            }
+        }
+        #header, #main, #sidebar, #footer {border: solid 1px red;}
+        #header {background-color: yellow;}
+        #sidebar {background-color: aliceblue;}
+        #game-board {
+            display: inline-block;
+            border: 2px solid black;
+            border-radius: 10px;
+            width: 70%;
+            height: 50%;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="number"] {width: 80px;}
+        #submit {margin-top: 10px;}
+        #message {margin-top: 20px;}
+        #count {margin-top: 10px;}
+        #main {background-color: aqua;}
+        #footer {background-color: coral;}
+    </style>
+  </head>
+  <body>
+    <div id="page">
+      <div id="header">
+        <h2>Header</h2>
+      </div>
+      <div id="main">
+        <h2>Main</h2>
+            <img src="/Users/being/dev_be_ing/html+css+js/temp/cat.jpeg" alt="고양이 사진" style="max-width:100%; height:auto;">
+      </div>
+      <div id="sidebar">
+        <h2>숫자맞추기(1~100)</h2>
+    <div id="game-board">
+      <div>
+        <label for="guess">추측한 숫자:</label>
+        <input type="number" id="guess" name="guess">
+      </div>
+      <div>
+        <button id="submit">제출</button>
+      </div>
+      <div id="message"></div>
+      <div id="count">제출 횟수: 0</div>
+    </div>
+    <script>
+      // 1부터 100 사이의 난수 생성
+      const numberToGuess = Math.floor(Math.random() * 100) + 1;
+
+      // 사용자가 제출한 횟수
+      let guessCount = 0;
+
+      // 사용자의 추측을 검사하고 게임 상황을 업데이트하는 함수
+      function checkGuess() {
+        // 사용자가 입력한 숫자 가져오기
+        const guess = Number(document.getElementById("guess").value);
+        // 메시지 표시할 div 요소 가져오기
+        const message = document.getElementById("message");
+        // 제출 횟수 표시할 div 요소 가져오기
+        const count = document.getElementById("count");
+
+        // 사용자의 추측이 올바른지 확인
+        if (guess === numberToGuess) {
+            // 올바른 경우 메시지와 제출 횟수 표시
+            message.textContent = `축하합니다! ${guessCount+1}번째로 숫자를 맞추셨습니다!`;
+            count.textContent = `제출 횟수: ${guessCount+1}`;
+            // 제출 버튼의 이벤트 리스너 제거
+            document.getElementById("submit").removeEventListener("click", checkGuess);
+        } else if (guess < numberToGuess) {
+            // 사용자의 추측이 작은 경우 메시지 업데이트
+            message.textContent = "너무 작습니다. 다시 시도해보세요.";
+        } else {
+            // 사용자의 추측이 큰 경우 메시지 업데이트
+            message.textContent = "너무 큽니다. 다시 시도해보세요.";
+        }
+        // 제출 횟수 증가
+        guessCount++;
+        // 제출 횟수 표시 업데이트
+        document.getElementById("count").textContent = `제출 횟수: ${guessCount}`;
+        }
+
+    // 제출 버튼 클릭 시 checkGuess 함수 호출
+    document.getElementById("submit").addEventListener("click", checkGuess);
+    </script>
+      </div>
+      <div id="footer">
+        <h2>Footer</h2>
+      </div>
+    </div>
+  </body>
+</html>

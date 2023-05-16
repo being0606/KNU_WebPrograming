@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>대학생활</title>
+  <style>
+    #output {
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div id="output"></div>
+  <script>
+    let grade = 1;
+    let month = 1;
+    let fontSize = 16;
+
+    function loop() {
+      if (grade <= 4) {
+        document.getElementById("output").innerHTML += "<span style='font-size: " + fontSize + "px;'>" + grade + "학년</span><br>";
+        grade++;
+      } else if (month <= 12) {
+        document.getElementById("output").innerHTML += "<span style='font-size: " + fontSize + "px;'>" + month + "월</span><br>";
+        month++;
+      } else {
+        return;
+      }
+      fontSize++;
+    }
+
+    setInterval(loop, 1000);
+  </script>
+</body>
+</html>
