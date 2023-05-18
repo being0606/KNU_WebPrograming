@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>마우스 이벤트로 메뉴 보이기</title>
+  <style>
+    .menu {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      padding: 10px;
+    }
+
+    .menu.show {
+      display: block;
+    }
+  </style>
+  <script>
+    function showMenu() {
+      var menu = document.getElementById("myMenu");
+      menu.classList.add("show");
+    }
+
+    function hideMenu() {
+      var menu = document.getElementById("myMenu");
+      menu.classList.remove("show");
+    }
+  </script>
+</head>
+<body>
+  <div onmouseover="showMenu()" onmouseout="hideMenu()">마우스를 올려보세요.</div>
+  <div id="myMenu" class="menu">
+    <ul>
+      <li>메뉴 항목 1</li>
+      <li>메뉴 항목 2</li>
+      <li>메뉴 항목 3</li>
+    </ul>
+  </div>
+</body>
+</html>

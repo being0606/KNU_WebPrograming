@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <title>마우스 이벤트 확인</title>
+  <style>
+    .highlight {
+      background-color: yellow;
+    }
+  </style>
+  <script>
+    function handleMouseOver() {
+      var element = document.getElementById("myDiv");
+      element.classList.add("highlight");
+    }
+
+    function handleMouseOut() {
+      var element = document.getElementById("myDiv");
+      element.classList.remove("highlight");
+    }
+  </script>
 </head>
 <body>
-    <script id="here">HelloWorld
-        function over(what)
-        {
-            what.innerHTML = "안녕하세요."
-            document.getElementById('test').style.backgroundColor='lightgreen'
-        }
-        function out(what)
-        {
-            what.innerHTML = "유유."
-            document.getElementById('test').style.backgroundColor='pink'
-        }
-        
-    </script>
-
+  <div id="myDiv" onmouseover="handleMouseOver()" onmouseout="handleMouseOut()">마우스를 올려보세요.</div>
 </body>
 </html>
