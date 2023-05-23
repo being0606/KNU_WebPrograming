@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="text"> <!-- 수정된 부분: 속성 값 수정 -->
+    <button type="button" onclick="getSome()">확인</button> <!-- 수정된 부분: 태그명 오타 수정 -->
+    <script>
+        function getSome() {
+            var input = document.getElementById("text").value; // 수정된 부분: 변수명 수정
+            var isAlphabet = /^[A-Za-z]+$/; // 수정된 부분: 정규표현식 패턴 추가
+
+            if (isAlphabet.test(input)) {
+                alert("알파벳입니다.");
+            } else {
+                alert("알파벳이 아닙니다.");
+            }
+        }
+    </script>
+</body>
+</html>
