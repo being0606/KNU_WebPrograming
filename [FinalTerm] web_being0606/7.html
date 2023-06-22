@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <!-- 아이콘 링크 -->    
+    <script src="https://kit.fontawesome.com/e46dee370a.js" crossorigin="anonymous"></script>
+    <!-- css와 연결 -->
+    <link rel="stylesheet" href="7.css">
+    <!-- 폰트 링크 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
+    <!-- 파비콘 링크 -->
+    <link rel="shortcut icon" href="현진_파비콘.png"  type="image/x-ico">
+</head>
+<body>
+    <nav class="navigation">
+        <div class="nav_left">
+            <i class="fa-solid fa-ghost"></i>
+            <a href="index.html">being0606</a>
+        </div>
+        <ul class="nav_menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="1.html">About Me</a></li>
+            <li><a href="2.html">Gallery</a></li>
+            <li><a href="3.html">My Interest</a></li>
+            <li><a href="4.html">where I am</a></li>
+            <li><a href="5.html">Game</a></li>
+            <li><a href="6.html">Summer</a></li>
+            <li><a href="7.html">Contact</a></li>
+        </ul>
+        <ul class="nav_right">
+            <li><a href="https://www.instagram.com/__be__ing/"><i class="fa-brands fa-instagram"></i>
+            <li><a href="https://github.com/being0606"><i class="fa-brands fa-github"></i></i></a></li>
+        </ul>
+    
+        <a class="burgger_button"><i class="fa-solid fa-bars"></i></a>
+    </nav>
+
+    <div id="text">
+        <h2>창업 및 비즈니스 문의</h2>
+        <p><i class="fa-brands fa-instagram"></i> : <a href="https://www.instagram.com/__be__ing/" style="color: white;">__be__ing</a></p>
+        <p><i class="fa-solid fa-phone"></i> : 010 - 8950 - 2376</p>
+        <p><i class="fa-regular fa-envelope"></i> : onuhjin@gmail.com</p>
+    </div>
+    
+    <script>
+        const toggleBtn = document.querySelector('.burgger_button');
+        const menu = document.querySelector('.nav_menu');
+        const icons = document.querySelector('.nav_right');
+
+        toggleBtn.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            icons.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>

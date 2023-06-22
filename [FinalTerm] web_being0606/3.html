@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Interest</title>
+    <!-- 아이콘 링크 -->    
+    <script src="https://kit.fontawesome.com/e46dee370a.js" crossorigin="anonymous"></script>
+    <!-- css와 연결 -->
+    <link rel="stylesheet" href="3.css">
+    <!-- 폰트 링크 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
+    <!-- 파비콘 링크 -->
+    <link rel="shortcut icon" href="현진_파비콘.png"  type="image/x-ico">
+</head>
+<body>
+    <nav class="navigation">
+        <div class="nav_left">
+            <i class="fa-solid fa-ghost"></i>
+            <a href="index.html">being0606</a>
+        </div>
+        <ul class="nav_menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="1.html">About Me</a></li>
+            <li><a href="2.html">Gallery</a></li>
+            <li><a href="3.html">My Interest</a></li>
+            <li><a href="4.html">where I am</a></li>
+            <li><a href="5.html">Game</a></li>
+            <li><a href="6.html">Summer</a></li>
+            <li><a href="7.html">Contact</a></li>
+        </ul>
+        <ul class="nav_right">
+            <li><a href="https://www.instagram.com/__be__ing/"><i class="fa-brands fa-instagram"></i>
+            <li><a href="https://github.com/being0606"><i class="fa-brands fa-github"></i></i></a></li>
+        </ul>
+    
+        <a class="burgger_button"><i class="fa-solid fa-bars"></i></a>
+    </nav>
+
+    <div id="text">
+        요즘 나 관심사는... <h1>창업이다!</h1><br>
+        <img src="6.jpeg" width="40%" height="40%">
+        <p>나는 창업을 하고싶다. 그래서 경진대회도 준비하고</p>
+        <p>창업지원단장 상도 수상했다</p>
+        <img src="2.jpeg" width="40%" height="40%">
+        <p>현재 import라는 팀의 대표로 활동하고 있다</p>
+        <p>스마트 워치 앱을 개발해서 돈을 많이 벌 것이다</p>
+    </div>
+    
+
+    <script>
+        const toggleBtn = document.querySelector('.burgger_button');
+        const menu = document.querySelector('.nav_menu');
+        const icons = document.querySelector('.nav_right');
+
+
+        toggleBtn.addEventListener('click',()=>{
+            menu.classList.toggle('active');
+            icons.classList.toggle('active');
+        })
+    </script>
+
+</body>
+</html>

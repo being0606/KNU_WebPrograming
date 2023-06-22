@@ -1,0 +1,134 @@
+:root {
+    --background-color: #F5E9D4;
+    --text-color: #374045;
+    --accent-color: #DAA588;
+    --highlight-color: #f1c27bd8;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    font-family: 'Gaegu', cursive;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.center img {
+    max-width: 30%; /* 이미지 크기 조정을 위한 값입니다. 필요에 따라 조절해주세요. */
+    height: auto;
+}
+
+.here {
+    color: var(--text-color);
+    background-color: var(--accent-color);
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 80%;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+.title {
+    color: var(--text-color);
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.sentence {
+    line-height: 1.5;
+    padding: 10px 30px 10px 30px;
+    margin-bottom: 10px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--highlight-color);
+    padding: 0px 0px 0px 20px;
+    font-size: 20px;
+}
+
+.nav_left {
+    font-size: 25px;
+    padding: auto;
+}
+
+.nav_menu {
+    display: flex;
+    font-size: 25px;
+    flex-wrap: wrap;
+}
+
+.nav_right {
+    display: flex;
+}
+
+.nav_menu li {
+    padding: 5px 20px;
+    list-style: none;
+}
+
+.nav_menu li:hover a {
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    padding: 10px 20px 10px;
+}
+
+.nav_right li {
+    padding: 5px 20px;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.burgger_button {
+    display: none;
+    position: absolute;
+    right: 10px;
+}
+
+@media screen and (max-width: 500px) {
+    .navigation {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 5px 20px;
+        font-size: 16px; /* 수정된 부분: 네비게이션의 글꼴 크기를 줄임 */
+    }
+    .nav_menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+    }
+    .nav_menu li {
+        width: 100%;
+        text-align: center;
+    }
+    .nav_right {
+        display: none;
+        justify-content: center;
+        width: 100%;
+        padding: 0;
+    }
+    .burgger_button {
+        display: block;
+    }
+    .nav_menu.active {
+        display: flex;
+    }
+    .nav_right.active {
+        display: flex;
+    }
+}
