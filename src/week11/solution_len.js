@@ -4,4 +4,4 @@ function solution(strlist) {
       answer.push(strlist[i].length);
     }
     return answer;
-  }  
+  }
